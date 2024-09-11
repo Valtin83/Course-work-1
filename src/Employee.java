@@ -3,6 +3,7 @@ import java.util.Objects;
 public class Employee {
     private static int idCounter = 1; // Статическая переменная-счетчик
     private final int ID;
+
     private final String FULL_NAME;  // Поле ФИО
     private int department;   // Поле отдел
     private double salary;    // Поле зарплата
@@ -17,6 +18,9 @@ public class Employee {
     }
 
     // Геттеры
+    public int  getID() {
+        return ID;
+    }
     public String getFullName() {
         return this.FULL_NAME;
     }
@@ -60,7 +64,7 @@ public class Employee {
         return Objects.hash(FULL_NAME, department, salary, ID);
     }
 
-    // toString
+    //  Метод toString
     @Override
     public String toString() {
         return "Сотрудник {" + "id=" + ID + " Ф.И.О. '" + FULL_NAME + '\'' +
