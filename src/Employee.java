@@ -2,27 +2,27 @@ import java.util.Objects;
 
 public class Employee {
     private static int idCounter = 1; // Статическая переменная-счетчик
-    private final int ID;
+    private final int id;
 
-    private final String FULL_NAME;  // Поле ФИО
+    private String fullName;  // Поле ФИО
     private int department;   // Поле отдел
     private double salary;    // Поле зарплата
 
 
     // Конструктор
-    public Employee(String FULL_NAME, int department, double salary) {
-        ID = idCounter++; //Присвоение ID из счетчика и увеличение счетчика
-        this.FULL_NAME = FULL_NAME;
+    public Employee(String fullName, int department, double salary) {
+        id = idCounter++; //Присвоение ID из счетчика и увеличение счетчика
+        this.fullName = fullName;
         this.department = department;
         this.salary = salary;
     }
 
     // Геттеры
     public int getId() {
-            return ID;
+            return id;
     }
     public String getFullName() {
-        return this.FULL_NAME;
+        return this.fullName;
     }
 
     public int getDepartment() {
@@ -56,18 +56,20 @@ public class Employee {
         if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;
         Employee employee = (Employee) obj;
-        return department == employee.department && Double.compare(salary, employee.salary) == 0 && ID == employee.ID && Objects.equals(FULL_NAME, employee.FULL_NAME);
+        return department == employee.department && Double.compare(salary,
+                employee.salary) == 0 && id == employee.id && Objects.equals(fullName,
+                employee.fullName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(FULL_NAME, department, salary, ID);
+        return Objects.hash(fullName, department, salary, id);
     }
 
     //  Метод toString
     @Override
     public String toString() {
-        return "id=" + ID + ". Ф.И.О.: '" + FULL_NAME + '\'' +
+        return "id=" + id + ". Ф.И.О.: '" + fullName + '\'' +
                 ", отдел = " + department + ", зарплата = " + salary + " руб.";
     }
 
