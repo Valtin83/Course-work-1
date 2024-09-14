@@ -67,7 +67,7 @@ public class Employee {
     //  Метод toString
     @Override
     public String toString() {
-        return "Сотрудник {" + "id=" + ID + " Ф.И.О. '" + FULL_NAME + '\'' +
-                ", отдел = " + department + ", зарплата = " + salary + '}';
+        return "Сотрудник {" + "id=" + ID + ". Ф.И.О.: '" + FULL_NAME + '\'' +
+                ", отдел = " + department + ", зарплата = " + salary + " руб.}";
     }
 }
