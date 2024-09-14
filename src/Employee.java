@@ -18,8 +18,8 @@ public class Employee {
     }
 
     // Геттеры
-    public int  getID() {
-        return ID;
+    public int getId() {
+            return ID;
     }
     public String getFullName() {
         return this.FULL_NAME;
@@ -67,7 +67,8 @@ public class Employee {
     //  Метод toString
     @Override
     public String toString() {
-        return "Сотрудник {" + "id=" + ID + ". Ф.И.О.: '" + FULL_NAME + '\'' +
-                ", отдел = " + department + ", зарплата = " + salary + " руб.}";
+        return "id=" + ID + ". Ф.И.О.: '" + FULL_NAME + '\'' +
+                ", отдел = " + department + ", зарплата = " + salary + " руб.";
     }
+
 }
